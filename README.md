@@ -8,7 +8,7 @@ Nesta fase inicial, o objetivo é construir a estrutura e marcação da platafor
 
 ---
 
-## 📁 Estrutura de Pastas do Projeto
+## Estrutura de Pastas do Projeto
 
 ```text
 src/
@@ -25,7 +25,7 @@ src/
 
 ---
 
-## 🐾 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 1. **Cabeçalho (`<header>`):**
    - Nome, lema e identificação do Pet Shop.
