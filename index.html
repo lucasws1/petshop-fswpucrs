@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Shop Patas &amp; Pelos - Produtos e Serviços</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- CABEÇALHO (HEADER) -->
-    <header>
+    <header class="container py-4">
       <h1>Pet Shop Patas &amp; Pelos</h1>
       <p>
         Cuidando com carinho, dedicação e saúde do seu melhor amigo desde 2020.
@@ -18,28 +24,77 @@
       </p>
 
       <!-- Navegação interna -->
-      <nav>
-        <p><strong>Navegue pelas seções:</strong></p>
-        <ul>
-          <li><a href="#sobre">Sobre o Pet Shop</a></li>
-          <li>
-            <a href="#produtos">Produtos por Categoria</a>
-            <ul>
-              <li><a href="#acessorios">Acessórios</a></li>
-              <li><a href="#racoes">Rações Não Perecíveis</a></li>
-              <li><a href="#higiene">Higiene e Limpeza</a></li>
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary"
+        aria-label="Menu principal"
+      >
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Alternar menu principal"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="menuPrincipal"
+          >
+            <ul class="navbar-nav gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#sobre">Sobre</a>
+              </li>
+              <li class="nav-item dropdown">
+                <button
+                  class="nav-link dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  id="menuProdutos"
+                  aria-expanded="false"
+                  aria-labelledby="menuProdutos"
+                  aria-controls="menuProdutos"
+                >
+                  Produtos
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#produtos">Ver catálogo</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#acessorios">Acessórios</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#racoes">Rações</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#higiene"
+                      >Higiene e Limpeza</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#servicos">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contato">Contato</a>
+              </li>
             </ul>
-          </li>
-          <li><a href="#servicos">Serviços e Banho &amp; Tosa</a></li>
-          <li><a href="#contato">Contato e Localização</a></li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
     <hr />
 
     <!-- CORPO PRINCIPAL (MAIN / BODY) -->
-    <main>
+    <main class="container py-4">
       <!-- SEÇÃO: SOBRE -->
       <section id="sobre">
         <h2>Sobre a Plataforma</h2>
@@ -62,50 +117,51 @@
         </p>
 
         <!-- CATEGORIA 1: ACESSÓRIOS -->
-        <section id="acessorios">
+        <section id="acessorios" class="mb-4">
           <h3>Categoria: Acessórios</h3>
-
           <!-- Produto 1 -->
-          <article>
-            <h4>1. Cama Pet Aconchego</h4>
-            <figure>
-              <img
-                src="assets/imagens/cama-pet.png"
-                alt="Cama pet almofadada confortável para cães e gatos"
-                width="300"
-                height="200"
-              />
-              <figcaption>Cama Pet Aconchego - Tamanho M (60x50cm)</figcaption>
-            </figure>
-            <p>
-              <strong>Descrição:</strong> Cama almofadada com tecido lavável,
-              fundo impermeável e enchimento antialérgico de alta densidade.
-              Proporciona isolamento térmico e máximo conforto para o sono do
-              seu cão ou gato.
-            </p>
-            <p><strong>Valor:</strong> R$ 139,90</p>
-          </article>
-
-          <!-- Produto 2 -->
-          <article>
-            <h4>2. Brinquedo Mordedor Resistente Pet Play</h4>
-            <figure>
-              <img
-                src="assets/imagens/brinquedo-mordedor.png"
-                alt="Brinquedo mordedor de borracha atóxica para pets"
-                width="300"
-                height="200"
-              />
-              <figcaption>Mordedor Texturizado Pet Play</figcaption>
-            </figure>
-            <p>
-              <strong>Descrição:</strong> Brinquedo produzido em borracha maciça
-              atóxica de alta durabilidade. Auxilia na limpeza mecânica dos
-              dentes, massageia as gengivas e combate o estresse do animal
-              durante o dia.
-            </p>
-            <p><strong>Valor:</strong> R$ 34,90</p>
-          </article>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <article class="card h-100">
+                <img
+                  src="assets/imagens/cama-pet.jpeg"
+                  class="card-img-top img-fluid"
+                  alt="Cama pet almofadada confortável para cães e gatos"
+                  width="300"
+                  height="200"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Cama Pet Aconchego</h4>
+                  <p class="card-text">
+                    Cama almofadada com tecido lavável e fundo impermeável.
+                    Tamanho M (60 x 50 cm).
+                  </p>
+                  <p class="card-text fw-bold">R$ 139,90</p>
+                </div>
+              </article>
+            </div>
+            <!--Produto 2-->
+            <div class="col">
+              <article class="card h-100">
+                <img
+                  src="assets/imagens/brinquedo-mordedor.png"
+                  class="card-img-top img-fluid"
+                  alt="Brinquedo mordedor de borracha atóxica para pets"
+                  width="300"
+                  height="200"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Brinquedo Mordedor Resistente Pet Play
+                  </h4>
+                  <p class="card-text">
+                    Brinquedo mordedor de borracha atóxica para pets.
+                  </p>
+                  <p class="card-text fw-bold">R$ 139,90</p>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
 
         <hr />
@@ -322,5 +378,10 @@
         >
       </p>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
