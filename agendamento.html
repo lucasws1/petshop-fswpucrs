@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento de Banho e Tosa - Pet Shop Patas &amp; Pelos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body id="topo">
+    <a class="visually-hidden-focusable position-absolute p-2 bg-warning text-dark" href="#conteudo">Pular para o conteúdo</a>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark sticky-top"
+      aria-label="Menu principal"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"
+          >🐾 Patas &amp; Pelos</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Alternar menu principal"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#sobre"
+                >Sobre</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <button
+                class="nav-link dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="menuProdutos"
+              >
+                Produtos
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="menuProdutos">
+                <li>
+                  <a class="dropdown-item" href="index.html#acessorios">Acessórios</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#racoes">Rações</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#higiene">Higiene</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastro.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-warning" aria-current="page" href="agendamento.html">Agendar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-center text-white py-4">
+      <div class="container">
+        <h1 class="h2 fw-bold mb-1">Agendamento de Banho e Tosa</h1>
+        <p class="mb-0">Escolha o serviço, a tele-busca ou a entrega no local, e o dia e horário.</p>
+      </div>
+    </header>
+
+    <main id="conteudo" class="container py-4">
+      <p>Escolha o serviço, a forma de atendimento e o dia e horário. Os campos marcados com <span class="text-danger" aria-hidden="true">*</span><span class="visually-hidden">asterisco</span> são obrigatórios.</p>
+
+      <div id="alertaAgendamento" class="d-none" role="alert" tabindex="-1"></div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <form id="formAgendamento" class="needs-validation" novalidate>
+
+            <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
+              <legend>Identificação</legend>
+              <p id="avisoPerfil" class="alert alert-info py-2 d-none">Preenchemos seus dados com base no cadastro que você fez neste navegador.</p>
+              <p class="small">Ainda não tem cadastro? <a href="cadastro.html">Cadastre o tutor e o pet</a>.</p>
+              <div class="row g-3">
+    <div class="col-md-6">
+      <label for="tutor" class="form-label">Nome do tutor <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="tutor" name="tutor" required minlength="3" maxlength="80" autocomplete="name" placeholder="Ex.: Maria da Silva">
+      <div class="invalid-feedback" id="fb-tutor">Informe o nome do tutor.</div>
+    </div>
+    <div class="col-md-6">
+      <label for="telefoneAg" class="form-label">Telefone / WhatsApp <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="tel" class="form-control" id="telefoneAg" name="telefoneAg" required inputmode="tel" maxlength="15" pattern="\(\d{2}\) \d{4,5}-\d{4}" autocomplete="tel" placeholder="(51) 99999-9999">
+      <div class="invalid-feedback" id="fb-telefoneAg">Informe um telefone no formato (51) 99999-9999.</div>
+    </div>
+    <div class="col-md-6">
+      <label for="pet" class="form-label">Nome do pet <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="pet" name="pet" required maxlength="40" placeholder="Ex.: Thor">
+      <div class="invalid-feedback" id="fb-pet">Informe o nome do pet.</div>
+    </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
+              <legend>Serviço <span class="text-danger" aria-hidden="true">*</span></legend>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="servico" id="servico-banho" value="banho" required>
+              <label class="form-check-label" for="servico-banho">
+                <strong>Banho</strong>
+                <span class="d-block small text-body-secondary">Shampoo e condicionador hipoalergênicos, escovação, limpeza de ouvidos e corte de unhas. R$ 50,00 (R$ 70,00 com tele-busca).</span>
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="servico" id="servico-banhotosa" value="banhotosa" required>
+              <label class="form-check-label" for="servico-banhotosa">
+                <strong>Banho e Tosa</strong>
+                <span class="d-block small text-body-secondary">Tosa higiênica, banho morno, hidratação básica, limpeza auricular e corte de unhas. R$ 70,00 (R$ 90,00 com tele-busca).</span>
+              </label>
+              <div class="invalid-feedback">Escolha um serviço.</div>
+            </div>
+            </fieldset>
+
+            <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
+              <legend>Como será o atendimento? <span class="text-danger" aria-hidden="true">*</span></legend>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="modalidade" id="modalidade-tele" value="tele" required>
+              <label class="form-check-label" for="modalidade-tele">
+                <strong>Tele-busca</strong>
+                <span class="d-block small text-body-secondary">Buscamos e levamos o pet em casa, em um raio de até 10 km da loja. Acréscimo de R$ 20,00.</span>
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="modalidade" id="modalidade-local" value="local" required>
+              <label class="form-check-label" for="modalidade-local">
+                <strong>Entrega do pet no local</strong>
+                <span class="d-block small text-body-secondary">Você leva o pet até a loja (Rua dos Animais, 450 – Petrópolis) no horário agendado.</span>
+              </label>
+              <div class="invalid-feedback">Escolha a forma de atendimento.</div>
+            </div>
+
+              <div id="teleBusca" class="d-none mt-3">
+                <p class="fw-semibold mb-2">Endereço para a busca do pet</p>
+                <div class="row g-3">
+    <div class="col-md-6">
+      <label for="ruaBusca" class="form-label">Rua / Avenida <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="ruaBusca" name="ruaBusca" required autocomplete="address-line1" placeholder="Ex.: Rua dos Animais">
+      <div class="invalid-feedback" id="fb-ruaBusca">Informe o endereço de busca.</div>
+    </div>
+    <div class="col-md-2">
+      <label for="numeroBusca" class="form-label">Número <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="number" class="form-control" id="numeroBusca" name="numeroBusca" required min="1" placeholder="450">
+      <div class="invalid-feedback" id="fb-numeroBusca">Informe o número.</div>
+    </div>
+    <div class="col-md-4">
+      <label for="bairroBusca" class="form-label">Bairro <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="bairroBusca" name="bairroBusca" required placeholder="Ex.: Petrópolis">
+      <div class="invalid-feedback" id="fb-bairroBusca">Informe o bairro.</div>
+    </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
+              <legend>Dia e horário</legend>
+              <div class="row g-3">
+    <div class="col-md-6">
+      <label for="data" class="form-label">Data <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="date" class="form-control" id="data" name="data" required aria-describedby="dataDica" >
+      <div id="dataDica" class="form-text">Atendemos de segunda a sábado.</div>
+      <div class="invalid-feedback" id="fb-data">Escolha a data do atendimento.</div>
+    </div>
+    <div class="col-md-6">
+      <label for="horario" class="form-label">Horário <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="time" class="form-control" id="horario" name="horario" required aria-describedby="horarioDica" min="08:00" max="18:00" step="1800">
+      <div id="horarioDica" class="form-text">Das 8h às 18h, de 30 em 30 minutos.</div>
+      <div class="invalid-feedback" id="fb-horario">Escolha um horário entre 8h e 18h.</div>
+    </div>
+                <div class="col-12">
+                  <label for="obsAg" class="form-label">Observações <span class="text-body-secondary small">(opcional)</span></label>
+                  <textarea class="form-control" id="obsAg" name="obsAg" rows="2" maxlength="200" placeholder="Algum cuidado especial com o pet?"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary btn-lg">Confirmar agendamento</button>
+              <button type="reset" class="btn btn-outline-secondary btn-lg">Limpar</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="col-lg-4" aria-labelledby="tituloResumo">
+          <div class="resumo-agendamento bg-white rounded-4 shadow-sm p-4 position-sticky">
+            <h2 id="tituloResumo" class="h5 border-0 pb-0">Resumo do agendamento</h2>
+            <dl class="mb-3">
+              <dt>Serviço</dt><dd id="resumoServico" class="text-body-secondary">Não escolhido</dd>
+              <dt>Atendimento</dt><dd id="resumoModalidade" class="text-body-secondary">Não escolhido</dd>
+              <dt>Data</dt><dd id="resumoData" class="text-body-secondary">Não escolhida</dd>
+              <dt>Horário</dt><dd id="resumoHorario" class="text-body-secondary">Não escolhido</dd>
+            </dl>
+            <p class="mb-0 fs-5">Valor: <strong id="resumoValor" aria-live="polite">—</strong></p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contato">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <h2 class="h5">Patas &amp; Pelos</h2>
+            <address class="mb-0">
+              Rua dos Animais, 450 – Petrópolis<br />
+              Porto Alegre – RS<br />
+              <a
+                class="link-light"
+                href="mailto:contato@patasepelospetshop.com.br"
+                >contato@patasepelospetshop.com.br</a
+              >
+            </address>
+          </div>
+
+          <nav class="col-md-4" aria-label="Links rápidos">
+            <h2 class="h5">Links rápidos</h2>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="link-light" href="index.html#produtos">Produtos</a>
+              </li>
+              <li>
+                <a class="link-light" href="index.html#servicos">Serviços</a>
+              </li>
+              <li><a class="link-light" href="cadastro.html">Cadastro</a></li>
+              <li>
+                <a class="link-light" href="agendamento.html">Agendamento</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="col-md-4">
+            <h2 class="h5">Horário</h2>
+            <p class="mb-1">Segunda a sábado, das 8h às 19h</p>
+            <p class="mb-2">
+              <span id="statusLoja" class="badge text-bg-secondary"
+                >Verificando...</span
+              >
+            </p>
+            <a class="btn btn-success btn-sm" href="https://wa.me/5551999998888"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+
+        <hr class="border-secondary" />
+        <div class="d-flex justify-content-between flex-wrap gap-2">
+          <small
+            >&copy; <span id="ano"></span> Pet Shop Patas &amp; Pelos – Projeto
+            FSW (Fase 2) – PUCRS. Autor: Lucas Weyne Schuch.</small
+          >
+          <a class="link-light small" href="#topo">Voltar ao topo ↑</a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

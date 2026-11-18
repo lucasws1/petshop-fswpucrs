@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Cliente e Pet - Pet Shop Patas &amp; Pelos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body id="topo">
+    <a class="visually-hidden-focusable position-absolute p-2 bg-warning text-dark" href="#conteudo">Pular para o conteúdo</a>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark sticky-top"
+      aria-label="Menu principal"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"
+          >🐾 Patas &amp; Pelos</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Alternar menu principal"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#sobre"
+                >Sobre</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <button
+                class="nav-link dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="menuProdutos"
+              >
+                Produtos
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="menuProdutos">
+                <li>
+                  <a class="dropdown-item" href="index.html#acessorios">Acessórios</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#racoes">Rações</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#higiene">Higiene</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="cadastro.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-warning" href="agendamento.html">Agendar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-center text-white py-4">
+      <div class="container">
+        <h1 class="h2 fw-bold mb-1">Cadastro de Cliente e Pet</h1>
+        <p class="mb-0">Cadastre o tutor e o pet para agilizar seus atendimentos.</p>
+      </div>
+    </header>
+
+    <main id="conteudo" class="container py-4">
+      <p>Preencha os dados do tutor e do pet. Os campos marcados com <span class="text-danger" aria-hidden="true">*</span><span class="visually-hidden">asterisco</span> são obrigatórios.</p>
+
+      <div id="alertaCadastro" class="d-none" role="alert" tabindex="-1"></div>
+
+      <form id="formCadastro" class="needs-validation" novalidate>
+        <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
+          <legend>Dados do cliente</legend>
+          <div class="row g-3">
+    <div class="col-md-8">
+      <label for="nome" class="form-label">Nome completo <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="nome" name="nome" required minlength="3" maxlength="80" autocomplete="name" placeholder="Ex.: Maria da Silva">
+      <div class="invalid-feedback" id="fb-nome">Informe o nome completo (mínimo 3 letras).</div>
+    </div>
+    <div class="col-md-4">
+      <label for="cpf" class="form-label">CPF <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="cpf" name="cpf" required inputmode="numeric" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+      <div class="invalid-feedback" id="fb-cpf">Informe um CPF válido, no formato 000.000.000-00.</div>
+    </div>
+    <div class="col-md-4">
+      <label for="nascimento" class="form-label">Data de nascimento <span class="text-body-secondary small">(opcional)</span></label>
+      <input type="date" class="form-control" id="nascimento" name="nascimento" autocomplete="bday">
+    </div>
+    <fieldset class="col-md-8">
+      <legend class="form-label fs-6">Sexo <span class="text-danger" aria-hidden="true">*</span></legend>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sexo" id="sexo-feminino" value="feminino" required>
+          <label class="form-check-label" for="sexo-feminino">Feminino</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sexo" id="sexo-masculino" value="masculino" required>
+          <label class="form-check-label" for="sexo-masculino">Masculino</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sexo" id="sexo-outro" value="outro" required>
+          <label class="form-check-label" for="sexo-outro">Outro</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sexo" id="sexo-nd" value="nd" required>
+          <label class="form-check-label" for="sexo-nd">Prefiro não informar</label>
+          <div class="invalid-feedback">Selecione uma opção.</div>
+        </div>
+    </fieldset>
+    <div class="col-md-4">
+      <label for="telefone" class="form-label">Telefone / WhatsApp <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="tel" class="form-control" id="telefone" name="telefone" required inputmode="tel" maxlength="15" pattern="\(\d{2}\) \d{4,5}-\d{4}" autocomplete="tel" placeholder="(51) 99999-9999">
+      <div class="invalid-feedback" id="fb-telefone">Informe um telefone no formato (51) 99999-9999.</div>
+    </div>
+    <div class="col-md-8">
+      <label for="email" class="form-label">E-mail <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="email" class="form-control" id="email" name="email" required autocomplete="email" placeholder="nome@exemplo.com">
+      <div class="invalid-feedback" id="fb-email">Informe um e-mail válido, como nome@exemplo.com.</div>
+    </div>
+    <div class="col-md-3">
+      <label for="cep" class="form-label">CEP <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="cep" name="cep" required inputmode="numeric" maxlength="9" pattern="\d{5}-\d{3}" autocomplete="postal-code" placeholder="00000-000">
+      <div class="invalid-feedback" id="fb-cep">Informe o CEP no formato 00000-000.</div>
+    </div>
+    <div class="col-md-7">
+      <label for="rua" class="form-label">Rua / Avenida <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="rua" name="rua" required autocomplete="address-line1" placeholder="Ex.: Rua dos Animais">
+      <div class="invalid-feedback" id="fb-rua">Informe o logradouro.</div>
+    </div>
+    <div class="col-md-2">
+      <label for="numero" class="form-label">Número <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="number" class="form-control" id="numero" name="numero" required min="1" placeholder="450">
+      <div class="invalid-feedback" id="fb-numero">Informe o número (mínimo 1).</div>
+    </div>
+    <div class="col-md-3">
+      <label for="complemento" class="form-label">Complemento <span class="text-body-secondary small">(opcional)</span></label>
+      <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apto, bloco...">
+    </div>
+    <div class="col-md-3">
+      <label for="bairro" class="form-label">Bairro <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="bairro" name="bairro" required placeholder="Ex.: Petrópolis">
+      <div class="invalid-feedback" id="fb-bairro">Informe o bairro.</div>
+    </div>
+    <div class="col-md-4">
+      <label for="cidade" class="form-label">Cidade <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="cidade" name="cidade" required autocomplete="address-level2" placeholder="Ex.: Porto Alegre">
+      <div class="invalid-feedback" id="fb-cidade">Informe a cidade.</div>
+    </div>
+    <div class="col-md-2">
+      <label for="estado" class="form-label">UF <span class="text-danger" aria-hidden="true">*</span></label>
+      <select class="form-select" id="estado" name="estado" required >
+        <option value="">Selecione...</option>
+        <option value="AC">AC</option>
+        <option value="AL">AL</option>
+        <option value="AP">AP</option>
+        <option value="AM">AM</option>
+        <option value="BA">BA</option>
+        <option value="CE">CE</option>
+        <option value="DF">DF</option>
+        <option value="ES">ES</option>
+        <option value="GO">GO</option>
+        <option value="MA">MA</option>
+        <option value="MT">MT</option>
+        <option value="MS">MS</option>
+        <option value="MG">MG</option>
+        <option value="PA">PA</option>
+        <option value="PB">PB</option>
+        <option value="PR">PR</option>
+        <option value="PE">PE</option>
+        <option value="PI">PI</option>
+        <option value="RJ">RJ</option>
+        <option value="RN">RN</option>
+        <option value="RS" selected>RS</option>
+        <option value="RO">RO</option>
+        <option value="RR">RR</option>
+        <option value="SC">SC</option>
+        <option value="SP">SP</option>
+        <option value="SE">SE</option>
+        <option value="TO">TO</option>
+      </select>
+      <div class="invalid-feedback">Selecione o estado.</div>
+    </div>
+    <fieldset class="col-12">
+      <legend class="form-label fs-6">Como prefere ser contatado? <span class="text-body-secondary small">(opcional)</span></legend>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="contato" id="contato-whatsapp" value="WhatsApp">
+        <label class="form-check-label" for="contato-whatsapp">WhatsApp</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="contato" id="contato-email" value="E-mail">
+        <label class="form-check-label" for="contato-email">E-mail</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="contato" id="contato-telefone" value="Telefone">
+        <label class="form-check-label" for="contato-telefone">Telefone</label>
+      </div>
+    </fieldset>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
+          <legend>Dados do pet</legend>
+          <div class="row g-3">
+    <div class="col-md-6">
+      <label for="nomePet" class="form-label">Nome do pet <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="nomePet" name="nomePet" required maxlength="40" placeholder="Ex.: Thor">
+      <div class="invalid-feedback" id="fb-nomePet">Informe o nome do pet.</div>
+    </div>
+    <fieldset class="col-md-6">
+      <legend class="form-label fs-6">Espécie <span class="text-danger" aria-hidden="true">*</span></legend>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="especie" id="especie-cao" value="cao" required>
+          <label class="form-check-label" for="especie-cao">Cão</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="especie" id="especie-gato" value="gato" required>
+          <label class="form-check-label" for="especie-gato">Gato</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="especie" id="especie-outro" value="outro" required>
+          <label class="form-check-label" for="especie-outro">Outro</label>
+          <div class="invalid-feedback">Selecione a espécie.</div>
+        </div>
+    </fieldset>
+    <div class="col-md-6">
+      <label for="raca" class="form-label">Raça <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="text" class="form-control" id="raca" name="raca" required list="listaRacas" maxlength="40" placeholder="Digite ou escolha uma raça">
+      <div class="invalid-feedback" id="fb-raca">Informe a raça (ou SRD, se não tiver raça definida).</div>
+    </div>
+    <datalist id="listaRacas">
+      <option value="Sem raça definida (SRD)"></option>
+      <option value="Labrador"></option>
+      <option value="Golden Retriever"></option>
+      <option value="Poodle"></option>
+      <option value="Shih Tzu"></option>
+      <option value="Yorkshire"></option>
+      <option value="Lhasa Apso"></option>
+      <option value="Bulldog"></option>
+      <option value="Pinscher"></option>
+      <option value="Spitz Alemão"></option>
+      <option value="Siamês"></option>
+      <option value="Persa"></option>
+      <option value="Maine Coon"></option>
+    </datalist>
+    <div class="col-md-3">
+      <label for="idade" class="form-label">Idade (em anos) <span class="text-danger" aria-hidden="true">*</span></label>
+      <input type="number" class="form-control" id="idade" name="idade" required aria-describedby="idadeDica" min="0" max="30" step="1" placeholder="Ex.: 4">
+      <div id="idadeDica" class="form-text">Para filhotes com menos de 1 ano, informe 0.</div>
+      <div class="invalid-feedback" id="fb-idade">Informe uma idade entre 0 e 30 anos.</div>
+    </div>
+    <div class="col-md-3">
+      <label for="porte" class="form-label">Porte <span class="text-danger" aria-hidden="true">*</span></label>
+      <select class="form-select" id="porte" name="porte" required >
+        <option value="">Selecione...</option>
+        <option value="pequeno">Pequeno (até 10 kg)</option>
+        <option value="medio">Médio (10 a 25 kg)</option>
+        <option value="grande">Grande (acima de 25 kg)</option>
+      </select>
+      <div class="invalid-feedback">Selecione o porte.</div>
+    </div>
+    <div class="col-12">
+      <label for="observacoes" class="form-label">Observações sobre o pet <span class="text-body-secondary small">(opcional)</span></label>
+      <textarea class="form-control" id="observacoes" name="observacoes" rows="3" maxlength="300" aria-describedby="observacoesDica" placeholder="Alergias, medos, comportamento, cuidados especiais..."></textarea>
+      <div id="observacoesDica" class="form-text">Máximo de 300 caracteres.</div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="vacinas" id="vacinas" value="sim">
+        <label class="form-check-label" for="vacinas">As vacinas do pet estão em dia</label>
+      </div>
+    </div>
+          </div>
+        </fieldset>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" name="termos" id="termos" required>
+          <label class="form-check-label" for="termos">Declaro que as informações são verdadeiras e autorizo o uso dos dados para o atendimento do meu pet. <span class="text-danger" aria-hidden="true">*</span></label>
+          <div class="invalid-feedback">É necessário aceitar para concluir o cadastro.</div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+          <button type="reset" class="btn btn-outline-secondary btn-lg">Limpar formulário</button>
+          <a class="btn btn-link btn-lg" href="agendamento.html">Já sou cadastrado: agendar serviço</a>
+        </div>
+      </form>
+    </main>
+
+    <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contato">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <h2 class="h5">Patas &amp; Pelos</h2>
+            <address class="mb-0">
+              Rua dos Animais, 450 – Petrópolis<br />
+              Porto Alegre – RS<br />
+              <a
+                class="link-light"
+                href="mailto:contato@patasepelospetshop.com.br"
+                >contato@patasepelospetshop.com.br</a
+              >
+            </address>
+          </div>
+
+          <nav class="col-md-4" aria-label="Links rápidos">
+            <h2 class="h5">Links rápidos</h2>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="link-light" href="index.html#produtos">Produtos</a>
+              </li>
+              <li>
+                <a class="link-light" href="index.html#servicos">Serviços</a>
+              </li>
+              <li><a class="link-light" href="cadastro.html">Cadastro</a></li>
+              <li>
+                <a class="link-light" href="agendamento.html">Agendamento</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="col-md-4">
+            <h2 class="h5">Horário</h2>
+            <p class="mb-1">Segunda a sábado, das 8h às 19h</p>
+            <p class="mb-2">
+              <span id="statusLoja" class="badge text-bg-secondary"
+                >Verificando...</span
+              >
+            </p>
+            <a class="btn btn-success btn-sm" href="https://wa.me/5551999998888"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+
+        <hr class="border-secondary" />
+        <div class="d-flex justify-content-between flex-wrap gap-2">
+          <small
+            >&copy; <span id="ano"></span> Pet Shop Patas &amp; Pelos – Projeto
+            FSW (Fase 2) – PUCRS. Autor: Lucas Weyne Schuch.</small
+          >
+          <a class="link-light small" href="#topo">Voltar ao topo ↑</a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
