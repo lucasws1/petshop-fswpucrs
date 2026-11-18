@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body id="topo">
     <!-- CABEÇALHO (HEADER) -->
     <header class="container py-4">
       <h1>Pet Shop Patas &amp; Pelos</h1>
@@ -91,8 +91,6 @@
       </nav>
     </header>
 
-    <hr />
-
     <!-- CORPO PRINCIPAL (MAIN / BODY) -->
     <main class="container py-4">
       <!-- SEÇÃO: SOBRE -->
@@ -106,8 +104,6 @@
         </p>
       </section>
 
-      <hr />
-
       <!-- SEÇÃO: PRODUTOS -->
       <section id="produtos">
         <h2>Catálogo de Produtos</h2>
@@ -118,7 +114,7 @@
 
         <!-- CATEGORIA 1: ACESSÓRIOS -->
         <section id="acessorios" class="mb-4">
-          <h3>Categoria: Acessórios</h3>
+          <h3>Acessórios</h3>
           <!-- Produto 1 -->
           <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
@@ -164,111 +160,120 @@
           </div>
         </section>
 
-        <hr />
-
         <!-- CATEGORIA 2: RAÇÕES NÃO PERECÍVEIS -->
-        <section id="racoes">
-          <h3>Categoria: Rações Não Perecíveis</h3>
-
+        <section id="racoes" class="mb-4">
+          <h3>Rações Não Perecíveis</h3>
           <!-- Produto 3 -->
-          <article>
-            <h4>3. Ração Seca Premium Especial Cães Adultos (15kg)</h4>
-            <figure>
-              <img
-                src="assets/imagens/racao-caes.png"
-                alt="Saco de ração premium especial de 15kg para cães adultos"
-                width="300"
-                height="200"
-              />
-              <figcaption>Ração Premium Especial Cães Adultos 15kg</figcaption>
-            </figure>
-            <p>
-              <strong>Descrição:</strong> Alimento completo e balanceado,
-              formulado com proteínas nobres de frango e arroz integral. Livre
-              de corantes artificiais, contém ômegas 3 e 6 para pelos brilhantes
-              e extrato de yucca para redução do odor das fezes.
-            </p>
-            <p><strong>Valor:</strong> R$ 189,90</p>
-          </article>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <article class="card h-100">
+                <img
+                  src="assets/imagens/racao-caes.png"
+                  class="card-img-top img-fluid"
+                  alt="Ração para cães"
+                  width="300"
+                  height="200"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Ração Premium Especial para Cães Adultos
+                  </h4>
+                  <p class="card-text">
+                    Alimento completo e balanceado para cães adultos, com
+                    ingredientes naturais, livre de corantes artificiais.
+                  </p>
+                  <p class="card-text fw-bold">
+                    Tamanho: 15kg.<br />
+                    R$ 189,90
+                  </p>
+                </div>
+              </article>
+            </div>
 
-          <!-- Produto 4 -->
-          <article>
-            <h4>4. Ração Seca Gatos Adultos Castrados Sabor Salmão (10kg)</h4>
-            <figure>
-              <img
-                src="assets/imagens/racao-gatos.png"
-                alt="Saco de ração para gatos castrados de 10kg sabor salmão"
-                width="300"
-                height="200"
-              />
-              <figcaption>Ração Gatos Castrados Sabor Salmão 10kg</figcaption>
-            </figure>
-            <p>
-              <strong>Descrição:</strong> Ração formulada com teor calórico
-              reduzido e fibras especiais para controle de peso e eliminação de
-              bolas de pelo. Possui controle rigoroso de minerais para manter a
-              saúde do trato urinário felino.
-            </p>
-            <p><strong>Valor:</strong> R$ 164,90</p>
-          </article>
+            <!--Produto 4-->
+            <div class="col">
+              <article class="card h-100">
+                <img
+                  src="assets/imagens/racao-gatos.png"
+                  class="card-img-top img-fluid"
+                  alt="Ração para gatos"
+                  width="300"
+                  height="200"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Ração para Gatos Adultos Castrados Sabor Salmão
+                  </h4>
+                  <p class="card-text">
+                    Alimento completo e balanceado para gatos adultos castrados,
+                    com sabor salmão.
+                  </p>
+                  <p class="card-text fw-bold">
+                    Tamanho: 10kg.<br />
+                    R$ 164,90
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
-
-        <hr />
 
         <!-- CATEGORIA 3: HIGIENE E LIMPEZA -->
-        <section id="higiene">
-          <h3>Categoria: Produtos de Higiene e Limpeza</h3>
-
+        <section id="higiene" class="mb-4">
+          <h3>Produtos de Higiene e Limpeza</h3>
           <!-- Produto 5 -->
-          <article>
-            <h4>
-              5. Tapete Higiênico Descartável Extra Absorvente (Pacote com 30
-              unidades)
-            </h4>
-            <figure>
-              <img
-                src="assets/imagens/tapete-higienico.png"
-                alt="Pacote de tapetes higiênicos descartáveis para cães"
-                width="300"
-                height="200"
-              />
-              <figcaption>Tapete Higiênico 60x60cm - 30 unidades</figcaption>
-            </figure>
-            <p>
-              <strong>Descrição:</strong> Tapete descartável com gel de absorção
-              ultra rápida, atrativo canino natural e abas laterais
-              antivazamento com fitas adesivas para fixação no piso. Neutraliza
-              odores desagradáveis por até 24 horas.
-            </p>
-            <p><strong>Valor:</strong> R$ 68,90</p>
-          </article>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <article class="card h-100">
+                <img
+                  src="assets/imagens/tapete-higienico.png"
+                  class="card-img-top img-fluid"
+                  alt="Tapete higiênico"
+                  width="300"
+                  height="200"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Tapete Higiênico 60cm x 60cm</h4>
+                  <p class="card-text">
+                    Tapete higiênico descartável com gel de absorção ultra
+                    rápida.
+                  </p>
+                  <p class="card-text fw-bold">
+                    30 unidades<br />
+                    R$ 68,90
+                  </p>
+                </div>
+              </article>
+            </div>
 
-          <!-- Produto 6 -->
-          <article>
-            <h4>6. Fralda Descartável Conforto Pet (Pacote com 12 unidades)</h4>
-            <figure>
-              <img
-                src="assets/imagens/fralda-pet.png"
-                alt="Pacote de fraldas descartáveis anatômicas para cães"
-                width="300"
-                height="200"
-              />
-              <figcaption>
-                Fralda Descartável Conforto Pet - Tamanho M
-              </figcaption>
-            </figure>
-            <p>
-              <strong>Descrição:</strong> Fralda higiênica desenvolvida com
-              formato anatômico, elásticos suaves e orifício para passagem da
-              cauda. Indicada para cadelas no período de cio, cães em
-              recuperação pós-operatória ou com incontinência urinária.
-            </p>
-            <p><strong>Valor:</strong> R$ 42,50</p>
-          </article>
+            <!--Produto 6-->
+            <div class="col">
+              <article class="card h-100">
+                <img
+                  src="assets/imagens/fralda-pet.png"
+                  class="card-img-top img-fluid"
+                  alt="Fralda para cães"
+                  width="300"
+                  height="200"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Fralda Descartável Conforto Pet - Tamanho M
+                  </h4>
+                  <p class="card-text">
+                    Fralda descartável anatômica para cães, com absorção ultra
+                    rápida e conforto para o animal.
+                  </p>
+                  <p class="card-text fw-bold">
+                    12 unidades<br />
+                    R$ 42,50
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
       </section>
-
-      <hr />
 
       <!-- SEÇÃO: SERVIÇOS -->
       <section id="servicos">
@@ -280,42 +285,44 @@
         </p>
 
         <!-- Tabela comparativa de serviços e valores com tele-busca -->
-        <table>
-          <caption>
-            <strong>Tabela de Serviços e Modalidades de Transporte</strong>
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Serviço</th>
-              <th scope="col">Descrição dos Cuidados</th>
-              <th scope="col">Valor Sem Tele-Busca</th>
-              <th scope="col">Valor Com Tele-Busca</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Banho e Tosa Tradicional</th>
-              <td>
-                Banho completo com shampoo e condicionador
-                neutro/hipoalergênico, secagem suave com soprador silencioso,
-                escovação da pelagem, corte e lixamento de unhas, limpeza de
-                ouvidos e tosa geral padronizada da raça.
-              </td>
-              <td>R$ 75,00</td>
-              <td>R$ 95,00</td>
-            </tr>
-            <tr>
-              <th scope="row">Tosa Higiênica e Banho Completo</th>
-              <td>
-                Banho morno relaxante, hidratação básica, corte e higienização
-                das unhas, limpeza auricular e tosa higiênica minuciosa nas
-                regiões íntimas, perianal e almofadinhas das patas (coxins).
-              </td>
-              <td>R$ 55,00</td>
-              <td>R$ 75,00</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-striped caption-top">
+            <caption>
+              <strong>Tabela de Serviços e Modalidades de Transporte</strong>
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Serviço</th>
+                <th scope="col">Descrição dos Cuidados</th>
+                <th scope="col">Valor Sem Tele-Busca</th>
+                <th scope="col">Valor Com Tele-Busca</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Banho e Tosa Tradicional</th>
+                <td>
+                  Banho completo com shampoo e condicionador
+                  neutro/hipoalergênico, secagem suave com soprador silencioso,
+                  escovação da pelagem, corte e lixamento de unhas, limpeza de
+                  ouvidos e tosa geral padronizada da raça.
+                </td>
+                <td>R$ 75,00</td>
+                <td>R$ 95,00</td>
+              </tr>
+              <tr>
+                <th scope="row">Tosa Higiênica e Banho Completo</th>
+                <td>
+                  Banho morno relaxante, hidratação básica, corte e higienização
+                  das unhas, limpeza auricular e tosa higiênica minuciosa nas
+                  regiões íntimas, perianal e almofadinhas das patas (coxins).
+                </td>
+                <td>R$ 55,00</td>
+                <td>R$ 75,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p>
           <em
@@ -328,60 +335,68 @@
       </section>
     </main>
 
-    <hr />
-
     <!-- RODAPÉ (FOOTER) -->
-    <footer id="contato">
-      <h3>Informações Legais e Contato</h3>
-      <h4>
-        Projeto da Disciplina Fundamentos de Sistemas Web (Fase 1) - PUCRS -
-        2026
-      </h4>
-      <p><strong>Responsável pelo Projeto: Lucas Weyne Schuch</strong></p>
+    <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contato">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <h2 class="h5">Patas &amp; Pelos</h2>
+            <address class="mb-0">
+              Rua dos Animais, 450 – Petrópolis<br />
+              Porto Alegre – RS<br />
+              <a
+                class="link-light"
+                href="mailto:contato@patasepelospetshop.com.br"
+                >contato@patasepelospetshop.com.br</a
+              >
+            </address>
+          </div>
 
-      <address>
-        <p>
-          <strong>Nome Fantasia:</strong> Pet Shop Patas &amp; Pelos
-          <strong>Razão Social:</strong> Lucas Weyne Schuch ME
-        </p>
-        <p>
-          <strong>Endereço Físico:</strong> Rua dos Animais, nº 450, Bairro
-          Petrópolis, Porto Alegre - RS, CEP: 90000-000
-        </p>
-        <p>
-          <strong>E-mail de Contato:</strong>
-          <a href="mailto:contato@patasepelospetshop.com.br"
-            >contato@patasepelospetshop.com.br</a
+          <nav class="col-md-4" aria-label="Links rápidos">
+            <h2 class="h5">Links rápidos</h2>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a class="link-light" href="index.html#produtos">Produtos</a>
+              </li>
+              <li>
+                <a class="link-light" href="index.html#servicos">Serviços</a>
+              </li>
+              <li><a class="link-light" href="cadastro.html">Cadastro</a></li>
+              <li>
+                <a class="link-light" href="agendamento.html">Agendamento</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="col-md-4">
+            <h2 class="h5">Horário</h2>
+            <p class="mb-1">Segunda a sábado, das 8h às 19h</p>
+            <p class="mb-2">
+              <span id="statusLoja" class="badge text-bg-secondary"
+                >Verificando...</span
+              >
+            </p>
+            <a class="btn btn-success btn-sm" href="https://wa.me/5551999998888"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+
+        <hr class="border-secondary" />
+        <div class="d-flex justify-content-between flex-wrap gap-2">
+          <small
+            >&copy; <span id="ano"></span> Pet Shop Patas &amp; Pelos – Projeto
+            FSW (Fase 2) – PUCRS. Autor: Lucas Weyne Schuch.</small
           >
-        </p>
-        <p>
-          <strong>Central Telefônica / WhatsApp:</strong> (51) 3333-4444 / (51)
-          99999-8888
-        </p>
-      </address>
-
-      <nav>
-        <p><strong>Links Rápidos do Site:</strong></p>
-        <ul>
-          <li><a href="#sobre">Início / Sobre</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#contato">Fale Conosco</a></li>
-        </ul>
-      </nav>
-
-      <p>
-        <small
-          >&copy; 2026 Pet Shop Patas &amp; Pelos. Projeto da Disciplina
-          Fundamentos de Sistemas Web (Fase 1) - PUCRS. Todos os direitos
-          reservados.</small
-        >
-      </p>
+          <a class="link-light small" href="#topo">Voltar ao topo ↑</a>
+        </div>
+      </div>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
