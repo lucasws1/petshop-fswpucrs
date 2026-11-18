@@ -1,0 +1,66 @@
+:root {
+  --verde: #2f7d6d;
+  --verde-escuro: #1f5c50;
+  --laranja: #f4a742;
+  --creme: #fbf6ee;
+}
+body {
+  background-color: var(--creme);
+}
+
+.navbar {
+  background-color: var(--verde-escuro);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--verde), #4aa68f);
+}
+
+main h2 {
+  border-bottom: 3px solid var(--laranja);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--verde);
+  --bs-btn-border-color: var(--verde);
+  --bs-btn-hover-bg: var(--verde-escuro);
+  --bs-btn-hover-border-color: var(--verde-escuro);
+}
+
+/* Carrossel de destaques */
+#carouselDestaques {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+#carouselDestaques .carousel-item img {
+  height: 380px;
+  object-fit: contain;
+}
+#carouselDestaques .carousel-caption {
+  background-color: rgba(31, 92, 80, 0.85);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  bottom: 2.5rem;
+}
+#carouselDestaques .carousel-control-prev-icon,
+#carouselDestaques .carousel-control-next-icon {
+  background-color: rgba(31, 92, 80, 0.85);
+  border-radius: 50%;
+  background-size: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
