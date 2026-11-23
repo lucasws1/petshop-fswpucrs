@@ -18,6 +18,7 @@
       href="#conteudo"
       >Pular para o conteúdo</a
     >
+    <!-- NAVEGAÇÃO PRINCIPAL -->
     <nav
       class="navbar navbar-expand-lg navbar-dark sticky-top"
       aria-label="Menu principal"
@@ -85,6 +86,7 @@
       </div>
     </nav>
 
+    <!-- CABEÇALHO DA PÁGINA -->
     <header class="hero text-center text-white py-4">
       <div class="container">
         <h1 class="h2 fw-bold mb-1">Cadastro de Cliente e Pet</h1>
@@ -94,6 +96,7 @@
       </div>
     </header>
 
+    <!-- CORPO PRINCIPAL: FORMULÁRIO DE CADASTRO -->
     <main id="conteudo" class="container py-4">
       <p>
         Preencha os dados do tutor e do pet. Os campos marcados com
@@ -104,6 +107,7 @@
       <div id="alertaCadastro" class="d-none" role="alert" tabindex="-1"></div>
 
       <form id="formCadastro" class="needs-validation" novalidate>
+        <!-- SEÇÃO: DADOS DO CLIENTE -->
         <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
           <legend>Dados do cliente</legend>
           <div class="row g-3">
@@ -441,6 +445,7 @@
           </div>
         </fieldset>
 
+        <!-- SEÇÃO: DADOS DO PET -->
         <fieldset class="form-section bg-white rounded-4 shadow-sm p-4 mb-4">
           <legend>Dados do pet</legend>
           <div class="row g-3">
@@ -641,6 +646,7 @@
       </form>
     </main>
 
+    <!-- RODAPÉ (FOOTER) -->
     <footer class="bg-dark text-light pt-4 pb-3 mt-5" id="contato">
       <div class="container">
         <div class="row gy-4">
@@ -681,7 +687,11 @@
                 >Verificando...</span
               >
             </p>
-            <a class="btn btn-success btn-sm" href="https://wa.me/5551999998888"
+            <a
+              class="btn btn-success btn-sm"
+              href="https://wa.me/5551999998888"
+              target="_blank"
+              rel="noopener noreferrer"
               >WhatsApp</a
             >
           </div>

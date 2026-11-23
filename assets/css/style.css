@@ -1,8 +1,12 @@
+/* Paleta de cores e layout base */
 :root {
   --verde: #2f7d6d;
   --verde-escuro: #1f5c50;
   --laranja: #f4a742;
   --creme: #fbf6ee;
+}
+html {
+  scroll-padding-top: 5rem;
 }
 body {
   background-color: var(--creme);
@@ -55,6 +59,9 @@ main h2 {
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   bottom: 2.5rem;
+}
+#carouselDestaques .carousel-indicators [data-bs-target] {
+  background-color: var(--verde-escuro);
 }
 #carouselDestaques .carousel-control-prev-icon,
 #carouselDestaques .carousel-control-next-icon {

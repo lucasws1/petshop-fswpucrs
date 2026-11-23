@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body id="topo">
+    <a
+      class="visually-hidden-focusable position-absolute p-2 bg-warning text-dark"
+      href="#conteudo"
+      >Pular para o conteúdo</a
+    >
+    <!-- NAVEGAÇÃO PRINCIPAL -->
     <nav
       class="navbar navbar-expand-lg navbar-dark sticky-top"
       aria-label="Menu principal"
@@ -93,7 +99,7 @@
     </header>
 
     <!-- CORPO PRINCIPAL (MAIN / BODY) -->
-    <main class="container py-4">
+    <main id="conteudo" class="container py-4">
       <!-- SEÇÃO: CARROSSEL DE DESTAQUES -->
       <section id="destaques" class="mb-5" aria-labelledby="titulo-destaques">
         <h2 id="titulo-destaques">Destaques da Semana</h2>
@@ -328,7 +334,7 @@
                 <img
                   src="assets/imagens/racao-caes.png"
                   class="card-img-top img-fluid"
-                  alt="Ração para cães"
+                  alt="Saco de ração premium especial de 15kg para cães adultos"
                   width="300"
                   height="200"
                 />
@@ -354,7 +360,7 @@
                 <img
                   src="assets/imagens/racao-gatos.png"
                   class="card-img-top img-fluid"
-                  alt="Ração para gatos"
+                  alt="Saco de ração para gatos castrados de 10kg sabor salmão"
                   width="300"
                   height="200"
                 />
@@ -386,7 +392,7 @@
                 <img
                   src="assets/imagens/tapete-higienico.png"
                   class="card-img-top img-fluid"
-                  alt="Tapete higiênico"
+                  alt="Pacote de tapetes higiênicos descartáveis extra absorventes com 30 unidades"
                   width="300"
                   height="200"
                 />
@@ -410,7 +416,7 @@
                 <img
                   src="assets/imagens/fralda-pet.png"
                   class="card-img-top img-fluid"
-                  alt="Fralda para cães"
+                  alt="Pacote de fraldas descartáveis anatômicas tamanho M com 12 unidades para pets"
                   width="300"
                   height="200"
                 />
@@ -529,7 +535,11 @@
                 >Verificando...</span
               >
             </p>
-            <a class="btn btn-success btn-sm" href="https://wa.me/5551999998888"
+            <a
+              class="btn btn-success btn-sm"
+              href="https://wa.me/5551999998888"
+              target="_blank"
+              rel="noopener noreferrer"
               >WhatsApp</a
             >
           </div>

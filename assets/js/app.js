@@ -134,7 +134,6 @@ function iniciarCadastro() {
 
     if (!form.checkValidity()) {
       form.classList.add("was-validated");
-      form.querySelector(":invalid").focus();
       mostrarAlerta(alerta, "danger", "Revise os campos destacados antes de enviar.");
       return;
     }
@@ -159,6 +158,7 @@ function iniciarCadastro() {
   });
 
   form.addEventListener("reset", () => {
+    cpf.setCustomValidity("");
     form.classList.remove("was-validated");
     alerta.className = "d-none";
   });
@@ -278,7 +278,6 @@ function iniciarAgendamento() {
 
     if (!form.checkValidity()) {
       form.classList.add("was-validated");
-      form.querySelector(":invalid").focus();
       mostrarAlerta(alerta, "danger", "Revise os campos destacados antes de confirmar.");
       return;
     }
@@ -301,6 +300,7 @@ function iniciarAgendamento() {
   form.addEventListener("reset", () => {
     form.classList.remove("was-validated");
     alerta.className = "d-none";
+    document.getElementById("avisoPerfil").classList.add("d-none");
     setTimeout(atualizarTudo, 0); // espera o reset terminar de limpar os campos
   });
 }

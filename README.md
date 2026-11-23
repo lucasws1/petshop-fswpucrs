@@ -66,7 +66,7 @@ Abra o link do GitHub Pages acima em qualquer navegador moderno. Para rodar loca
 - **Landmarks e nomes** nas regiões de navegação (`aria-label` na navbar, no carrossel e nos links do rodapé).
 - **Controles do carrossel** com texto para leitor de tela ("Produto anterior", "Próximo produto").
 - **Mensagens dinâmicas** (alertas de erro e de sucesso e valor do resumo) com `role="alert"` e `aria-live`, para serem lidas automaticamente.
-- **Link "Pular para o conteúdo"** nas páginas de cadastro e agendamento, para quem navega pelo teclado.
+- **Link "Pular para o conteúdo"** em todas as páginas, para quem navega pelo teclado.
 - Campos obrigatórios identificados também por `required`, e não apenas pelo asterisco visual.
 
 ## Ajustes realizados em relação à Fase 1
